@@ -1,5 +1,5 @@
 {
-  "name": "ts",
+  "name": "phaser3_bumper_game",
   "version": "0.0.1",
   "description": "phaser3 bumper game.",
   "type": "module",
@@ -11,7 +11,12 @@
   },
   "author": "tenpaMk2",
   "license": "MIT",
-  "keywords": ["phaser3", "phaser", "webpack", "typescript"],
+  "keywords": [
+    "phaser3",
+    "phaser",
+    "webpack",
+    "typescript"
+  ],
   "devDependencies": {
     "copy-webpack-plugin": "^9.0.1",
     "phaser": "^3.55.2",
