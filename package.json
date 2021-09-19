@@ -1,0 +1,25 @@
+{
+  "name": "ts",
+  "version": "0.0.1",
+  "description": "phaser3 bumper game.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve",
+    "watch": "webpack --watch"
+  },
+  "author": "tenpaMk2",
+  "license": "MIT",
+  "keywords": ["phaser3", "phaser", "webpack", "typescript"],
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "phaser": "^3.55.2",
+    "prettier": "^2.4.1",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.4.3",
+    "webpack": "^5.53.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1"
+  }
+}
