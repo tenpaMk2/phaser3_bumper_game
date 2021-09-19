@@ -81,9 +81,12 @@ export default class Demo extends Phaser.Scene {
 const config = {
   type: Phaser.AUTO,
   backgroundColor: "#125555",
-  width: 800,
-  height: 600,
+  width: 500,
+  height: 800,
   scene: Demo,
+  scale: {
+    mode: Phaser.Scale.FIT,
+  },
   physics: {
     default: "matter",
     friction: 0,
