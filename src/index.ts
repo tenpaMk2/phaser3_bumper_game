@@ -15,7 +15,6 @@ export default class Demo extends Phaser.Scene {
   preload = () => {};
 
   create = () => {
-    this.matter.world.setBounds();
     this.matter.add.mouseSpring();
 
     const width = this.renderer.width;
