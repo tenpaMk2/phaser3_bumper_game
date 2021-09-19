@@ -88,12 +88,13 @@ const config = {
   },
   physics: {
     default: "matter",
-    friction: 0,
     matter: {
+      // https://photonstorm.github.io/phaser3-docs/Phaser.Types.Physics.Matter.html
       gravity: {
         x: 0,
         y: 0,
       },
+      setBounds: false,
       enableSleeping: true,
       debug: {
         showAxes: false,
