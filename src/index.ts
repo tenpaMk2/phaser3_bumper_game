@@ -1,5 +1,5 @@
-import { Vector } from "matter";
 import * as Phaser from "phaser";
+import { EnemyFactory } from "./enemy";
 
 export default class Demo extends Phaser.Scene {
   public text: Phaser.GameObjects.Text;
@@ -23,9 +23,10 @@ export default class Demo extends Phaser.Scene {
     this.base = this.matter.add.circle(width / 2, height / 2, 30);
     this.base.isStatic = true;
 
-    const enemyRectangle = this.matter.add.rectangle(250, 50, 200, 32);
-    const enemyCircle = this.matter.add.circle(150, 250, 16);
-    this.enemies.push(enemyRectangle, enemyCircle);
+    const enemyFactory = new EnemyFactory(this);
+    for (let i = 0; i < 10; i++) {
+      this.enemies.push(enemyFactory.add("random"));
+    }
 
     this.text = this.add.text(10, 10, "Move the mouse", {
       font: "16px Courier",
