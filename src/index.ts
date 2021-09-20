@@ -4,6 +4,7 @@ import { EnemyFactory } from "./enemy";
 export default class Demo extends Phaser.Scene {
   public text: Phaser.GameObjects.Text;
   public base: MatterJS.BodyType;
+  public bumper: MatterJS.BodyType;
   public enemies: MatterJS.BodyType[];
   readonly accelerationFactor = 0.000001;
 
@@ -15,23 +16,25 @@ export default class Demo extends Phaser.Scene {
   preload = () => {};
 
   create = () => {
+    this.text = this.add.text(10, 10, "Move the mouse", {
+      font: "16px Courier",
+      color: "#88FF88",
+    });
+
     this.matter.add.mouseSpring();
 
     const width = this.renderer.width;
     const height = this.renderer.height;
 
-    this.base = this.matter.add.circle(width / 2, height / 2, 30);
+    this.base = this.matter.add.circle(width * 0.5, height * 0.5, 20);
     this.base.isStatic = true;
+
+    this.bumper = this.matter.add.circle(width * 0.4, height * 0.4, 40);
 
     const enemyFactory = new EnemyFactory(this);
     for (let i = 0; i < 10; i++) {
       this.enemies.push(enemyFactory.add("random"));
     }
-
-    this.text = this.add.text(10, 10, "Move the mouse", {
-      font: "16px Courier",
-      color: "#88FF88",
-    });
 
     this.matter.world.on(
       "collisionstart",
